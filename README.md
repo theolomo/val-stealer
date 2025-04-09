@@ -1,64 +1,37 @@
-# ⚠️ Val Stealer (FICTIF) ⚠️
+# ⚠️ Val Stealer  ⚠️
 
-> **DISCLAIMER : Ce projet est purement fictif, à des fins éducatives uniquement. _Val Stealer_ n'existe pas et ne doit jamais être utilisé dans un but malveillant.**
+> **DISCLAIMER : Ce projet est purement a but educatif et à des fins éducatives uniquement. _Val Stealer_ ne doit jamais être utilisé dans un but malveillant.**
 
 ---
 
 ## 🧠 À propos
 
-**Val Stealer** est un concept fictif d'un stealer écrit en Python, pensé pour "récupérer" un ensemble d'informations sensibles sur un système Windows. Il se veut rapide, discret et modulaire.
+**Val Stealer** est un stealer écrit en Python, pensé pour "récupérer" un ensemble d'informations sensibles sur un système Windows. Il se veut rapide, discret et modulaire.
 
 ---
 
-## 🚀 Fonctionnalités (fictives)
+## 🚀 Fonctionnalités
 
 - 📁 Récupération de fichiers :
-  - Fichiers `.txt`, `.docx`, `.pdf` depuis le Bureau et Documents.
+  - Fichiers `.txt`, `.docx`, `.pdf` depuis le Bureau et Documents. ( bientot )
 - 🌐 Vol de données navigateur :
-  - Cookies, historique, mots de passe sauvegardés (Chrome, Opera GX).
+  - Cookies, historique, mots de passe sauvegardés (Chrome, Opera GX, Edge).
 - 💬 Extraction de tokens :
   - Discord (toutes les versions installées).
 - 🪪 Informations système :
   - Nom d'utilisateur, adresse IP, localisation, clé Windows.
-- 🔑 Keylogger basique (optionnel).
-- ☁️ Envoi via Webhook Discord ou FTP.
+- ☁️ Envoi via Webhook Discord.
 
 ---
 
-## ⚙️ Installation (fictive)
+## ⚙️ Installation 
 
-```bash
-git clone https://github.com/fake/val-stealer.git
-cd val-stealer
-pip install -r requirements.txt
-python val.py
-```
+lancez start.bat
 
 ---
 
-## 🛠️ Configuration (fictive)
 
-Modifier le fichier `config.py` :
-
-```python
-WEBHOOK_URL = "https://discord.com/api/webhooks/xxx/yyy"
-ENABLE_KEYLOGGER = False
-STEAL_COOKIES = True
-```
-
----
-
-## 📦 Build en exécutable (fictif)
-
-Utiliser `pyinstaller` pour compiler en `.exe` :
-
-```bash
-pyinstaller --noconsole --onefile val.py
-```
-
----
-
-## 🕵️ Mode furtif (fictif)
+## 🕵️ Mode furtif
 
 - S'exécute au démarrage (via `AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`)
 - Fichier renommé dynamiquement avec nom aléatoire
@@ -66,34 +39,10 @@ pyinstaller --noconsole --onefile val.py
 
 ---
 
-## 📁 Arborescence (fictive)
-
-```
-val-stealer/
-├── val.py
-├── config.py
-├── modules/
-│   ├── browser.py
-│   ├── discord.py
-│   ├── system.py
-│   └── keylogger.py
-├── utils/
-│   └── encrypter.py
-└── requirements.txt
-```
-
----
-
 ## 🧪 Avertissement
 
-Ce projet est une **fiction totale**. Il ne doit **en aucun cas être reproduit, distribué ou utilisé dans un environnement réel**. Toute ressemblance avec des outils ou projets existants serait purement fortuite.
+Ce projet est **a but educati**. Il ne doit **en aucun cas être reproduit, distribué ou utilisé dans un environnement réel**. Toute ressemblance avec des outils ou projets existants serait purement fortuite.
 
-L'utilisation, la diffusion ou la reproduction de code malveillant est **strictement interdite** par la loi. Ce document a été créé uniquement pour **illustrer** ce qu'un tel projet fictif pourrait contenir dans un contexte pédagogique.
+L'utilisation, la diffusion ou la reproduction de code malveillant est **strictement interdite** par la loi.
 
 ---
-
-## 📜 Licence
-
-🛑 Aucun droit réservé. Ce projet **n'existe pas**. Il ne s'agit **pas d'un logiciel réel**.
-
-Ce dépôt est **fictif**, ne contient aucun code malveillant, et ne doit pas être pris au sérieux.
