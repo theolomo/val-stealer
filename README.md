@@ -31,7 +31,7 @@ lancez start.bat
 ---
 
 
-## 🕵️ Mode furtif
+## 🕵️ Mode furtif ( soon )
 
 - S'exécute au démarrage (via `AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup`)
 - Fichier renommé dynamiquement avec nom aléatoire
