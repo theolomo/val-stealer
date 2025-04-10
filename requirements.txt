@@ -1,0 +1,9 @@
+wmi
+psutil
+requests
+geocoder
+cryptography
+pycryptodome
+websocket-client
+PyQt6
+
