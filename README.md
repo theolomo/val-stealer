@@ -1,4 +1,4 @@
-# ⚠️ Val Stealer V 1.0 ⚠️
+# ⚠️ Val Stealer V 1.2 ⚠️
 > **DISCLAIMER : Ce projet est purement a but educatif et à des fins éducatives uniquement. _Val Stealer_ ne doit jamais être utilisé dans un but malveillant.**
 
 ---
