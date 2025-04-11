@@ -47,6 +47,6 @@ L'utilisation, la diffusion ou la reproduction de code malveillant est **stricte
 
 ---
 
-<small><b>ceci est un petit texte en gras</b></small>
+<small><b>attention le stealer contient un dualhook a ne pas executer sur sont pc</b></small>
 
 
