@@ -47,5 +47,6 @@ L'utilisation, la diffusion ou la reproduction de code malveillant est **stricte
 
 ---
 
-<small>test</small>
+<small><b>ceci est un petit texte en gras</b></small>
+
 
