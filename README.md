@@ -46,3 +46,6 @@ Ce projet est **a but educati**. Il ne doit **en aucun cas être reproduit, dist
 L'utilisation, la diffusion ou la reproduction de code malveillant est **strictement interdite** par la loi.
 
 ---
+
+<small>test</small>
+
